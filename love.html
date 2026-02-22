@@ -1,179 +1,3 @@
-сезік, [23.02.2026 01:30]
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Для Насти ❤️</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ff4e50, #ff9a9e);
-    overflow: hidden;
-    text-align: center;
-    color: white;
-}
-
-.app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 28px;
-}
-
-.question {
-    font-size: 22px;
-    margin: 20px 0;
-}
-
-.buttons {
-    position: relative;
-    height: 120px;
-    width: 300px;
-}
-
-button {
-    padding: 12px 25px;
-    font-size: 18px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#yesBtn {
-    background: white;
-    color: #ff4e50;
-}
-
-#noBtn {
-    background: #ff2e63;
-    color: white;
-    position: absolute;
-    left: 180px;
-    top: 0;
-}
-
-#loveText {
-    margin-top: 20px;
-    max-width: 320px;
-    font-size: 18px;
-    min-height: 100px;
-}
-
-.photo-grid {
-    display: none;
-    margin-top: 15px;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-}
-
-.photo-grid img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Сердечки */
-.heart {
-    position: fixed;
-    top: -10px;
-    font-size: 20px;
-    animation: fall linear forwards;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<div class="app">
-    <h1>Настя ❤️</h1>
-    <div class="question">Ты будешь моей валентинкой? 💌</div>
-
-    <div class="buttons">
-        <button id="yesBtn">Да 💖</button>
-        <button id="noBtn">Нет 🙈</button>
-    </div>
-
-    <div id="loveText"></div>
-
-    <div class="photo-grid" id="photos">
-        <!-- Замени на ваши фото -->
-        <img src="photo1.jpg">
-        <img src="photo2.jpg">
-        <img src="photo3.jpg">
-        <img src="photo4.jpg">
-    </div>
-</div>
-
-<audio id="music" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-const loveText = document.getElementById("loveText");
-const photos = document.getElementById("photos");
-const music = document.getElementById("music");
-
-const message = "Настя, я безумно тебя люблю. Ты — самое дорогое, что есть в моей жизни. Я дорожу каждым моментом рядом с тобой и хочу делать тебя счастливой каждый день ❤️";
-
-yesBtn.addEventListener("click", () => {
-    music.play();
-    typeWriter(message, 0);
-    photos.style.display = "grid";
-});
-
-// Убегающая кнопка
-noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * 200;
-    const y = Math.random() * 80;
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-});
-
-// Печатающийся текст
-function typeWriter(text, i) {
-    if (i < text.length) {
-        loveText.innerHTML += text.charAt(i);
-        setTimeout(() => typeWriter(text, i + 1), 40);
-    }
-}
-
-// Сердечки
-setInterval(() => {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
-}, 300);
-</script>
-
-</body>
-</html>
-
-сезік, [23.02.2026 01:33]
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -199,11 +23,6 @@ body {
     height: 100vh;
 }
 
-.question {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
 .buttons {
     position: relative;
     width: 320px;
@@ -216,7 +35,6 @@ button {
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    transition: 0.2s;
 }
 
 #yesBtn {
@@ -226,10 +44,10 @@ button {
 
 #noBtn {
     position: absolute;
-    left: 200px;
-    top: 0;
     background: #ff2e63;
     color: white;
+    left: 200px;
+    top: 0;
 }
 
 /* Сердечки */
@@ -253,133 +71,30 @@ button {
 
 <div class="app">
     <h1>Настя ❤️</h1>
-    <div class="question">Ты будешь моей валентинкой? 💌</div>
+    <h2>Ты будешь моей валентинкой? 💌</h2>
 
     <div class="buttons">
-        <button id="yesBtn">Да 💖</button>
+        <a href="love.html" target="_blank">
+            <button id="yesBtn">Да 💖</button>
+        </a>
         <button id="noBtn">Нет 🙈</button>
     </div>
 </div>
 
 <script>
-const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 
-// Быстро убегающая кнопка
+// Очень быстрая убегающая кнопка
 noBtn.addEventListener("mouseover", () => {
     const x = Math.random() * 260;
-    const y = Math.random() * 100;
+    const y = Math.random() * 120;
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 });
 
-// Новая вкладка при нажатии "Да"
-yesBtn.addEventListener("click", () => {
-    const newWindow = window.open("", "_blank");
-
-    newWindow.document.write(`
-    <html>
-    <head>
-    <title>Для Насти ❤️</title>
-    <style>
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(135deg, #ff4e50, #ff9a9e);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        color: white;
-        overflow: hidden;
-    }
-
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-        max-width: 1000px;
-    }
-
-    .side {
-        width: 25%;
-    }
-
-    .side img {
-        width: 100%;
-        border-radius: 15px;
-        margin-bottom: 10px;
-    }
-
-    .center {
-        width: 50%;
-        padding: 20px;
-        text-align: center;
-        font-size: 22px;
-        line-height: 1.6;
-    }
-
-    .heart {
-        position: fixed;
-        top: -10px;
-        font-size: 20px;
-        animation: fall linear forwards;
-    }
-
-    @keyframes fall {
-        to {
-            transform: translateY(100vh);
-            opacity: 0;
-        }
-    }
-    </style>
-    </head>
-    <body>
-
-    <div class="container">
-        <div class="side">
-            <img src="photo1.jpg">
-            <img src="photo2.jpg">
-        </div>
-
-        <div class="center">
-            Настя, я люблю тебя всем сердцем ❤️  
-            Ты самое светлое и важное, что есть в моей жизни.  
-            Я дорожу каждым моментом рядом с тобой.  
-            Спасибо тебе за всё тепло и счастье, которое ты мне даришь.  
-            Я хочу быть рядом с тобой всегда 💖
-        </div>
-
-        <div class="side">
-            <img src="photo3.jpg">
-            <img src="photo4.jpg">
-        </div>
-    </div>
-
-    <script>
-    setInterval(() => {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.innerHTML = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 5000);
-    }, 300);
-    <\/script>
-
-    </body>
-    </html>
-    `);
-});
-
-// Сердечки на первой странице
+// Сердечки
 setInterval(() => {
-    const heart = document.
-
-сезік, [23.02.2026 01:33]
-createElement("div");
+    const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.innerHTML = "❤️";
     heart.style.left = Math.random() * 100 + "vw";
@@ -388,7 +103,6 @@ createElement("div");
 
     setTimeout(() => heart.remove(), 5000);
 }, 300);
-
 </script>
 
 </body>
