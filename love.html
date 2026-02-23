@@ -3,54 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Настя ❤️</title>
+<title>Для Насти ❤️</title>
 
 <style>
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #ff4e50, #ff9a9e);
-    overflow: hidden;
-    text-align: center;
-    color: white;
-}
-
-.app {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.buttons {
-    position: relative;
-    width: 320px;
-    height: 150px;
-}
-
-button {
-    padding: 12px 28px;
-    font-size: 18px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-#yesBtn {
-    background: white;
-    color: #ff4e50;
-}
-
-#noBtn {
-    position: absolute;
-    background: #ff2e63;
     color: white;
-    left: 200px;
-    top: 0;
+    overflow: hidden;
 }
 
-/* Сердечки */
+.container {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.side {
+    width: 25%;
+}
+
+.side img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.center {
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    font-size: 22px;
+    line-height: 1.6;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 .heart {
     position: fixed;
     top: -10px;
@@ -69,30 +67,27 @@ button {
 
 <body>
 
-<div class="app">
-    <h1>Настя ❤️</h1>
-    <h2>Ты будешь моей валентинкой? 💌</h2>
+<div class="container">
+    <div class="side">
+        <img src="photo1.jpg">
+        <img src="photo2.jpg">
+    </div>
 
-    <div class="buttons">
-        <a href="love.html" target="_blank">
-            <button id="yesBtn">Да 💖</button>
-        </a>
-        <button id="noBtn">Нет 🙈</button>
+    <div class="center">
+        Настя, я люблю тебя всем сердцем ❤️  
+        Ты самое дорогое, что есть в моей жизни.  
+        Я дорожу каждым моментом рядом с тобой.  
+        Спасибо за тепло, поддержку и счастье.  
+        Я хочу быть с тобой всегда 💖
+    </div>
+
+    <div class="side">
+        <img src="photo3.jpg">
+        <img src="photo4.jpg">
     </div>
 </div>
 
 <script>
-const noBtn = document.getElementById("noBtn");
-
-// Очень быстрая убегающая кнопка
-noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * 260;
-    const y = Math.random() * 120;
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-});
-
-// Сердечки
 setInterval(() => {
     const heart = document.createElement("div");
     heart.classList.add("heart");
@@ -100,10 +95,10 @@ setInterval(() => {
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
     document.body.appendChild(heart);
-
     setTimeout(() => heart.remove(), 5000);
 }, 300);
 </script>
 
 </body>
 </html>
+
